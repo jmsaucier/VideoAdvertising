@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoAdvertising", "VideoAd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoAdvertising.Tests", "VideoAdvertising.Tests\VideoAdvertising.Tests.csproj", "{EB81D88F-DA9C-4FE3-8A89-3BD40C5C2F12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoAdvertising.Common", "VideoAdvertising.Common\VideoAdvertising.Common.csproj", "{D8207136-670F-4BBE-9394-A6D98D9C7251}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoAdvertising.DataAccessLayer", "VideoAdvertising.DataAccessLayer\VideoAdvertising.DataAccessLayer.csproj", "{16DEA1AF-A238-43C7-AB36-023539858F36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{EB81D88F-DA9C-4FE3-8A89-3BD40C5C2F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB81D88F-DA9C-4FE3-8A89-3BD40C5C2F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB81D88F-DA9C-4FE3-8A89-3BD40C5C2F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8207136-670F-4BBE-9394-A6D98D9C7251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8207136-670F-4BBE-9394-A6D98D9C7251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8207136-670F-4BBE-9394-A6D98D9C7251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8207136-670F-4BBE-9394-A6D98D9C7251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16DEA1AF-A238-43C7-AB36-023539858F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16DEA1AF-A238-43C7-AB36-023539858F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16DEA1AF-A238-43C7-AB36-023539858F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16DEA1AF-A238-43C7-AB36-023539858F36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

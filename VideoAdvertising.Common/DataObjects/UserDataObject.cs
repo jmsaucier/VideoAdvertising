@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VideoAdvertising.Common
+namespace VideoAdvertising.Common.DataObjects
 {
-    public class Class1
+    class UserDataObject
     {
     }
 }
