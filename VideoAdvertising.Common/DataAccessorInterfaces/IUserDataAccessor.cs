@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VideoAdvertising.Common.Objects;
+﻿using System.Collections.Generic;
+
+using VideoAdvertising.Common.ObjectInterfaces;
 
 namespace VideoAdvertising.Common.DataAccessInterfaces
 {
     public interface IUserDataAccessor
     {
-        User GetUser(string id);
+        IUser GetUser(string id);
 
-        List<User> GetUsers();
+        List<IUser> GetUsers();
 
-        User StoreUser(User user);
+        IUser StoreUser(IUser user);
 
-        User UpdateUser(User user);
+        IUser UpdateUser(IUser user);
     }
 }
