@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoAdvertising", "VideoAdvertising\VideoAdvertising.csproj", "{6B83742B-7ED2-4AEC-9949-B8DB445BB6D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoAdvertising.Web", "VideoAdvertising\VideoAdvertising.Web.csproj", "{6B83742B-7ED2-4AEC-9949-B8DB445BB6D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoAdvertising.Tests", "VideoAdvertising.Tests\VideoAdvertising.Tests.csproj", "{EB81D88F-DA9C-4FE3-8A89-3BD40C5C2F12}"
 EndProject

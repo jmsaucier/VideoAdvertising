@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace VideoAdvertising.Common.DataObjects
 {
-    class UserDataObject
+    public class UserDataObject
     {
+
     }
 }

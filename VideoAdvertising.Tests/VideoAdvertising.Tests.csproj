@@ -96,9 +96,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VideoAdvertising\VideoAdvertising.csproj">
+    <ProjectReference Include="..\VideoAdvertising\VideoAdvertising.Web.csproj">
       <Project>{6B83742B-7ED2-4AEC-9949-B8DB445BB6D7}</Project>
-      <Name>VideoAdvertising</Name>
+      <Name>VideoAdvertising.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
