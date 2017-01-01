@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataObjects\UserDataObject.cs" />
+    <Compile Include="DataAccessorInterfaces\IUserDataAccessor.cs" />
+    <Compile Include="ObjectInterfaces\IUser.cs" />
     <Compile Include="Objects\Advertisement.cs" />
     <Compile Include="Objects\AdvertisingCampaign.cs" />
     <Compile Include="Objects\Organization.cs" />
