@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessorImplementations\UserDataAccessorAccessorImplementation.cs" />
+    <Compile Include="DataAccessorImplementations\UserRepositorySQLImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,24 +5,29 @@ using VideoAdvertising.Common.ObjectInterfaces;
 
 namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
 {
-    public class UserDataAccessorImplementation : IUserDataAccessor
+    public class UserRepositorySQLImplementation : IUserRepository
     {
-        public IUser GetUser(string id)
+        public UserRepositorySQLImplementation()
+        {
+            
+        }
+
+        public IUser GetById(string id)
         {
             throw new NotImplementedException();
         }
 
-        public List<IUser> GetUsers()
+        public IEnumerable<IUser> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public IUser StoreUser(IUser user)
+        public IUser Store(IUser value)
         {
             throw new NotImplementedException();
         }
 
-        public IUser UpdateUser(IUser user)
+        public IUser Update(string id, IUser value)
         {
             throw new NotImplementedException();
         }
