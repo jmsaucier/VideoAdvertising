@@ -21,12 +21,8 @@ namespace VideoAdvertising.Tests.Common.Interactors
             [Test]
             public void Is_Not_Null()
             {
-                IUserRepository userRepository = (new Mock<IUserRepository>()).Object;
-                IAdvertisingCampaignRepository advertisingCampaignRepository =
-                    (new Mock<IAdvertisingCampaignRepository>()).Object;
-
                 RetrieveAdvertisingCampaignsImplementor Target =
-                    new RetrieveAdvertisingCampaignsImplementor(advertisingCampaignRepository);
+                    new RetrieveAdvertisingCampaignsImplementor(new AdvertisingCampaignTestRepository());
                 Assert.NotNull(Target);
             }
         }
