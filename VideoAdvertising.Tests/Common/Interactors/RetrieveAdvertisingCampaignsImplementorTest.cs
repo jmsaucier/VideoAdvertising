@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Web.UI;
 using Moq;
 using NUnit.Framework;
-using VideoAdvertising.Common.DataAccessInterfaces;
 using VideoAdvertising.Common.Interactors;
-using VideoAdvertising.Common.ObjectInterfaces;
+using VideoAdvertising.Common.Interfaces.RequestInterfaces;
 using VideoAdvertising.Common.Objects;
-using VideoAdvertising.Common.RequestInterfaces;
 using VideoAdvertising.Tests.TestObjects;
 
 namespace VideoAdvertising.Tests.Common.Interactors

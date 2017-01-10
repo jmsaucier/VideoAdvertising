@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 
-using VideoAdvertising.Common.ObjectInterfaces;
-
-namespace VideoAdvertising.Common.DataAccessInterfaces
+namespace VideoAdvertising.Common.Interfaces.DataAccessInterfaces
 {
     public interface IUserRepository : IRepository<IUser>
     {
-        
+        IUser GetUserByUserName(string username);
+    
+        IUser GetUserByEmail(string email);
     }
 }

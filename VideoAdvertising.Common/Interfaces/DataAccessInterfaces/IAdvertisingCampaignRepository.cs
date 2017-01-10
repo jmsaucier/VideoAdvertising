@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using VideoAdvertising.Common.ObjectInterfaces;
+using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 
-namespace VideoAdvertising.Common.DataAccessInterfaces
+namespace VideoAdvertising.Common.Interfaces.DataAccessInterfaces
 {
     public interface IAdvertisingCampaignRepository : IRepository<IAdvertisingCampaign>
     {

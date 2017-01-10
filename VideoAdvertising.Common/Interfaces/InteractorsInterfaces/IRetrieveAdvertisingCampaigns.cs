@@ -1,10 +1,10 @@
-﻿using VideoAdvertising.Common.RequestInterfaces;
-using VideoAdvertising.Common.ResponseInterfaces;
+﻿using VideoAdvertising.Common.Interfaces.RequestInterfaces;
+using VideoAdvertising.Common.Interfaces.ResponseInterfaces;
 
-namespace VideoAdvertising.Common.InteractorsInterfaces
+namespace VideoAdvertising.Common.Interfaces.InteractorsInterfaces
 {
     public interface IRetrieveAdvertisingCampaigns
     {
-        IRetrieveAdvertisingCampaignResponse GetAdvertisingCampaigns(IRetrieveAdvertisingCampaignRequest request);
+        IRetrieveAdvertisingCampaignsResponse GetAdvertisingCampaigns(IRetrieveAdvertisingCampaignRequest request);
     }
 }

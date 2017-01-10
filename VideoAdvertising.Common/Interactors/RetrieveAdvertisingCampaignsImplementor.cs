@@ -4,26 +4,26 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
-using VideoAdvertising.Common.DataAccessInterfaces;
-using VideoAdvertising.Common.InteractorsInterfaces;
-using VideoAdvertising.Common.RequestInterfaces;
-using VideoAdvertising.Common.ResponseInterfaces;
+using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
+using VideoAdvertising.Common.Interfaces.InteractorsInterfaces;
+using VideoAdvertising.Common.Interfaces.RequestInterfaces;
+using VideoAdvertising.Common.Interfaces.ResponseInterfaces;
 using VideoAdvertising.Common.ResponseObjects;
 
 namespace VideoAdvertising.Common.Interactors
 {
     public class RetrieveAdvertisingCampaignsImplementor : IRetrieveAdvertisingCampaigns
     {
-        private IAdvertisingCampaignRepository _advertisingCampaignRepository;
+        private readonly IAdvertisingCampaignRepository _advertisingCampaignRepository;
 
         public RetrieveAdvertisingCampaignsImplementor(IAdvertisingCampaignRepository advertisingCampaignRepository)
         {
             _advertisingCampaignRepository = advertisingCampaignRepository;
         }
 
-        public IRetrieveAdvertisingCampaignResponse GetAdvertisingCampaigns(IRetrieveAdvertisingCampaignRequest request)
+        public IRetrieveAdvertisingCampaignsResponse GetAdvertisingCampaigns(IRetrieveAdvertisingCampaignRequest request)
         {
-            RetrieveAdvertisingCampaignResponse response = new RetrieveAdvertisingCampaignResponse
+            RetrieveAdvertisingCampaignsResponse response = new RetrieveAdvertisingCampaignsResponse
             {
                 AdvertisingCampaigns = _advertisingCampaignRepository.GetByUser(request.UserId)
             };

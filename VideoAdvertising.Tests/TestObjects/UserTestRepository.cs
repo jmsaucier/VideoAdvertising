@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VideoAdvertising.Common.DataAccessInterfaces;
-using VideoAdvertising.Common.ObjectInterfaces;
-using VideoAdvertising.Common.Objects;
+using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
+using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
+using VideoAdvertising.Common.Objects.ModelObjects;
 
 namespace VideoAdvertising.Tests.TestObjects
 {
@@ -49,6 +49,17 @@ namespace VideoAdvertising.Tests.TestObjects
             repository.Add(value);
             return value;
         }
-        
+
+        public IUser GetUserByUserName(string username)
+        {
+            IUser ret = repository.FirstOrDefault(a => a.Username == username);
+            return ret ?? new User();
+        }
+
+        public IUser GetUserByEmail(string email)
+        {
+            IUser ret = repository.FirstOrDefault(a => a.Email == email);
+            return ret ?? new User();
+        }
     }
 }

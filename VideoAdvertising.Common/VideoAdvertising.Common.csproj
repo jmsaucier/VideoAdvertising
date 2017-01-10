@@ -40,23 +40,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interactors\CreateAdvertisingCampaignInteractor.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IAdvertisementRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IAdvertisingCampaignRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\DataValidatorInterfaces\IUserValidator.cs" />
+    <Compile Include="Interfaces\DataValidatorInterfaces\IValidator.cs" />
+    <Compile Include="Interfaces\DataValidatorInterfaces\IValidatorResponse.cs" />
+    <Compile Include="Interfaces\InteractorsInterfaces\ICreateAdvertisingCampaign.cs" />
     <Compile Include="Interfaces\InteractorsInterfaces\IRetrieveAdvertisingCampaigns.cs" />
     <Compile Include="Interactors\RetrieveAdvertisingCampaignsImplementor.cs" />
     <Compile Include="Interfaces\ObjectInterfaces\IAdvertisement.cs" />
     <Compile Include="Interfaces\ObjectInterfaces\IAdvertisingCampaign.cs" />
     <Compile Include="Interfaces\ObjectInterfaces\IUser.cs" />
+    <Compile Include="Interfaces\RequestInterfaces\ICreateAdvertisingCampaignRequest.cs" />
+    <Compile Include="Interfaces\ResponseInterfaces\ICreateAdvertisingCampaignResponse.cs" />
     <Compile Include="Objects\ModelObjects\Advertisement.cs" />
     <Compile Include="Objects\ModelObjects\AdvertisingCampaign.cs" />
     <Compile Include="Objects\ModelObjects\Organization.cs" />
     <Compile Include="Objects\ModelObjects\User.cs" />
+    <Compile Include="Objects\ResponseObjects\CreateAdvertisingCampaignResponse.cs" />
+    <Compile Include="Objects\ResponseObjects\GenericValidatorResponse.cs" />
+    <Compile Include="Objects\ValidatorObjects\UserEmailDoesNotExistValidator.cs" />
+    <Compile Include="Objects\ValidatorObjects\UsernameDoesNotExistValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\RequestInterfaces\IRetrieveAdvertisingCampaignRequest.cs" />
-    <Compile Include="Interfaces\ResponseInterfaces\IRetrieveAdvertisingCampaignResponse.cs" />
-    <Compile Include="Objects\ResponseObjects\RetrieveAdvertisingCampaignResponse.cs" />
+    <Compile Include="Interfaces\ResponseInterfaces\IRetrieveAdvertisingCampaignsResponse.cs" />
+    <Compile Include="Objects\ResponseObjects\RetrieveAdvertisingCampaignsResponse.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

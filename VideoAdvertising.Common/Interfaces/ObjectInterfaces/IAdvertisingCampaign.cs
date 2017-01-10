@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
-namespace VideoAdvertising.Common.ObjectInterfaces
+namespace VideoAdvertising.Common.Interfaces.ObjectInterfaces
 {
     public interface IAdvertisingCampaign
     {

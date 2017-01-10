@@ -1,17 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using VideoAdvertising.Common.DataAccessInterfaces;
-using VideoAdvertising.Common.ObjectInterfaces;
+using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
+using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 
 namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
 {
     public class UserRepositorySQLImplementation : IUserRepository
     {
-        public UserRepositorySQLImplementation()
-        {
-            
-        }
-
         public IUser GetById(string id)
         {
             throw new NotImplementedException();
@@ -28,6 +23,16 @@ namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
         }
 
         public IUser Update(string id, IUser value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IUser GetUserByUserName(string username)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IUser GetUserByEmail(string email)
         {
             throw new NotImplementedException();
         }

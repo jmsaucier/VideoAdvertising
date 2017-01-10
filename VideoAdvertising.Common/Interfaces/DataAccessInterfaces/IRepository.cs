@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using VideoAdvertising.Common.ObjectInterfaces;
 
-namespace VideoAdvertising.Common.DataAccessInterfaces
+namespace VideoAdvertising.Common.Interfaces.DataAccessInterfaces
 {
     public interface IRepository<T>
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using VideoAdvertising.Common.DataAccessInterfaces;
-using VideoAdvertising.Common.ObjectInterfaces;
-using VideoAdvertising.Common.Objects;
+using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
+using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
+using VideoAdvertising.Common.Objects.ModelObjects;
 
 namespace VideoAdvertising.Tests.TestObjects
 {
