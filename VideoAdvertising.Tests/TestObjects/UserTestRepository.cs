@@ -11,9 +11,9 @@ namespace VideoAdvertising.Tests.TestObjects
     {
         private readonly List<IUser> repository = new List<IUser>
         {
-            new User {Id = "1", Email = "abc@xyz.com", Username = "abc"},
-            new User {Id = "2", Email = "abc@xyz.com", Username = "foo"},
-            new User {Id = "3", Email = "abc@xyz.com", Username = "bar"}
+            new User {Id = "1", Email = "abc1@xyz.com", Username = "abc"},
+            new User {Id = "2", Email = "abc2@xyz.com", Username = "foo"},
+            new User {Id = "3", Email = "abc3@xyz.com", Username = "bar"}
         };
 
         private int nextId = 4;

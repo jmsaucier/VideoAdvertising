@@ -21,19 +21,18 @@ namespace VideoAdvertising.Common.Objects.ValidatorObjects
 
         public IValidatorResponse Validate(IUser value)
         {
+            
+            if (value == null)
+            {
+                //TODO: JMS - 1/11/17 - log this event to an error log, because this shouldn't happen
+                return new SystemFailureValidatorResponse();
+            }
+            
             IUser user = _userRepository.GetUserByEmail(value.Email);
-            
-            GenericValidatorResponse response = new GenericValidatorResponse();
-            
-            if (user.Id == string.Empty)
-            {
-                response.Passed = true;
-            }
-            else
-            {
-                response.Passed = false;
-                response.Messages = new List<string> { "Email address already registered." };
-            }
+
+            GenericValidatorResponse response = (user.Id == string.Empty) ? 
+                new GenericValidatorResponse(true) : 
+                new GenericValidatorResponse(false, "Email address already registered.");
 
             return response;
         }

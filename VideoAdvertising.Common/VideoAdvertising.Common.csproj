@@ -62,6 +62,7 @@
     <Compile Include="Objects\ModelObjects\User.cs" />
     <Compile Include="Objects\ResponseObjects\CreateAdvertisingCampaignResponse.cs" />
     <Compile Include="Objects\ResponseObjects\GenericValidatorResponse.cs" />
+    <Compile Include="Objects\ResponseObjects\SystemFailureValidatorResponse.cs" />
     <Compile Include="Objects\ValidatorObjects\UserEmailDoesNotExistValidator.cs" />
     <Compile Include="Objects\ValidatorObjects\UsernameDoesNotExistValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -97,6 +97,7 @@
     <Compile Include="Common\Interactors\CreateAdvertisingCampaignInteractorTest.cs" />
     <Compile Include="Common\Interactors\RetrieveAdvertisingCampaignsImplementorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UserEmailDoesNotExistValidatorTest.cs" />
+    <Compile Include="Common\Objects\ValidatorObjects\UsernameDoesNotExistValidatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestObjects\AdvertisementTestRepository.cs" />
     <Compile Include="TestObjects\AdvertisingCampaignTestRepository.cs" />
