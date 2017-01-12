@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace VideoAdvertising.Common.Interfaces.DataValidatorInterfaces
+namespace VideoAdvertising.Common.Interfaces.ValidatorInterfaces
 {
     public interface IValidatorResponse
     {

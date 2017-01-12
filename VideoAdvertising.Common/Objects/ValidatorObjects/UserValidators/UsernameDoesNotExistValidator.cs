@@ -1,12 +1,11 @@
-﻿using System.Collections.Generic;
-using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
-using VideoAdvertising.Common.Interfaces.DataValidatorInterfaces;
+﻿using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
-using VideoAdvertising.Common.Objects.ResponseObjects;
+using VideoAdvertising.Common.Interfaces.ValidatorInterfaces;
+using VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses;
 
-namespace VideoAdvertising.Common.Objects.ValidatorObjects
+namespace VideoAdvertising.Common.Objects.ValidatorObjects.UserValidators
 {
-    public class UsernameDoesNotExistValidator : IUserValidator
+    public class UsernameDoesNotExistValidator : IValidator<IUser>
     {
         private readonly IUserRepository _userRepository;
 

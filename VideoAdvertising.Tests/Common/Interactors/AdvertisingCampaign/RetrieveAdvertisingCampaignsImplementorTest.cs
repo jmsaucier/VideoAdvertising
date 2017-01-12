@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Web.UI;
 using Moq;
 using NUnit.Framework;
-using VideoAdvertising.Common.Interactors;
+using VideoAdvertising.Common.Interactors.AdvertisingCampaignInteractors;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces;
 using VideoAdvertising.Common.Objects;
 using VideoAdvertising.Tests.TestObjects;
 
-namespace VideoAdvertising.Tests.Common.Interactors
+namespace VideoAdvertising.Tests.Common.Interactors.AdvertisingCampaign
 {
     [TestFixture]
     public class RetrieveAdvertisingCampaignsImplementorTest
@@ -38,6 +38,7 @@ namespace VideoAdvertising.Tests.Common.Interactors
                 var response = Target.GetAdvertisingCampaigns(requestMock.Object);
                 Assert.IsNotNull(response);
             }
+
         }
 
     }

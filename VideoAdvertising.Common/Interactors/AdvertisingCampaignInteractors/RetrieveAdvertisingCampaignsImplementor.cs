@@ -5,12 +5,13 @@ using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
-using VideoAdvertising.Common.Interfaces.InteractorsInterfaces;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces;
 using VideoAdvertising.Common.Interfaces.ResponseInterfaces;
+using VideoAdvertising.Common.Interfaces.InteractorsInterfaces.AdvertisingCampaignInteractorsInterfaces;
+using VideoAdvertising.Common.Interfaces.ResponseInterfaces.AdvertisingCampaignResponseInterfaces;
 using VideoAdvertising.Common.ResponseObjects;
 
-namespace VideoAdvertising.Common.Interactors
+namespace VideoAdvertising.Common.Interactors.AdvertisingCampaignInteractors
 {
     public class RetrieveAdvertisingCampaignsImplementor : IRetrieveAdvertisingCampaigns
     {

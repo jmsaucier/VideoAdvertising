@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
-using VideoAdvertising.Common.Interfaces.DataValidatorInterfaces;
+﻿using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
-using VideoAdvertising.Common.Objects.ResponseObjects;
+using VideoAdvertising.Common.Interfaces.ValidatorInterfaces;
+using VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses;
 
-namespace VideoAdvertising.Common.Objects.ValidatorObjects
+namespace VideoAdvertising.Common.Objects.ValidatorObjects.UserValidators
 {
-    public class UserEmailDoesNotExistValidator : IUserValidator
+    public class UserEmailDoesNotExistValidator : IValidator<IUser>
     {
         private readonly IUserRepository _userRepository;
 
