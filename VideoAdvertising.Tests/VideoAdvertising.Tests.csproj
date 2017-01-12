@@ -94,8 +94,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\Interactors\AdvertisingCampaign\CreateAdvertisingCampaignInteractorTest.cs" />
-    <Compile Include="Common\Interactors\AdvertisingCampaign\RetrieveAdvertisingCampaignsImplementorTest.cs" />
+    <Compile Include="Common\Interactors\AdvertisingCampaignInteractors\CreateAdvertisingCampaignInteractorTest.cs" />
+    <Compile Include="Common\Interactors\AdvertisingCampaignInteractors\RetrieveAdvertisingCampaignsImplementorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UserEmailDoesNotExistValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UsernameDoesNotExistValidatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

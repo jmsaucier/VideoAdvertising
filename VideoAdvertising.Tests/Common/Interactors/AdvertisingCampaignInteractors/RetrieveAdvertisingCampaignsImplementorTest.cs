@@ -8,7 +8,7 @@ using VideoAdvertising.Common.Interfaces.RequestInterfaces;
 using VideoAdvertising.Common.Objects;
 using VideoAdvertising.Tests.TestObjects;
 
-namespace VideoAdvertising.Tests.Common.Interactors.AdvertisingCampaign
+namespace VideoAdvertising.Tests.Common.Interactors.AdvertisingCampaignInteractors
 {
     [TestFixture]
     public class RetrieveAdvertisingCampaignsImplementorTest

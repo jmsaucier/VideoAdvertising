@@ -4,15 +4,12 @@ using NUnit.Framework;
 using VideoAdvertising.Common.Interactors.AdvertisingCampaignInteractors;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces;
-using VideoAdvertising.Common.Interfaces.ResponseInterfaces;
 using VideoAdvertising.Common.Interfaces.ResponseInterfaces.AdvertisingCampaignResponseInterfaces;
-using VideoAdvertising.Common.Interfaces.ValidatorInterfaces;
-using VideoAdvertising.Common.Objects.ModelObjects;
 using VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses;
 using VideoAdvertising.Common.Objects.ValidatorObjects.GeneralValidators;
 using VideoAdvertising.Tests.TestObjects;
 
-namespace VideoAdvertising.Tests.Common.Interactors.AdvertisingCampaign
+namespace VideoAdvertising.Tests.Common.Interactors.AdvertisingCampaignInteractors
 {
     [TestFixture]
     public class CreateAdvertisingCampaignInteractorTest
