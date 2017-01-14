@@ -17,7 +17,10 @@ namespace VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses
         }
 
         public GenericValidatorResponse(bool passed, string message)
-            : this(passed, new List<string> { message })
+            : this(passed, 
+                message == null 
+                ? new List<string>() 
+                : new List<string> { message })
         {
             
         }

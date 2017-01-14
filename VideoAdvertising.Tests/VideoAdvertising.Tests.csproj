@@ -96,8 +96,15 @@
   <ItemGroup>
     <Compile Include="Common\Interactors\AdvertisingCampaignInteractors\CreateAdvertisingCampaignInteractorTest.cs" />
     <Compile Include="Common\Interactors\AdvertisingCampaignInteractors\RetrieveAdvertisingCampaignsImplementorTest.cs" />
-    <Compile Include="Common\Objects\ValidatorObjects\UserEmailDoesNotExistValidatorTest.cs" />
-    <Compile Include="Common\Objects\ValidatorObjects\UsernameDoesNotExistValidatorTest.cs" />
+    <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\AggregateValidatorResponseTest.cs" />
+    <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\AlwaysFailsValidatorResponseTest.cs" />
+    <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\AlwaysPassesValidatorResponseTest.cs" />
+    <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\GenericValidatorResponseTest.cs" />
+    <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\SystemFailureValidatorResponseTest.cs" />
+    <Compile Include="Common\Objects\ValidatorObjects\GeneralValidators\AlwaysPassValidatorTest.cs" />
+    <Compile Include="Common\Objects\ValidatorObjects\GeneralValidators\ReturnCertainTypeOfResponseValidatorTest.cs" />
+    <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UserEmailDoesNotExistValidatorTest.cs" />
+    <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UsernameDoesNotExistValidatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestObjects\AdvertisementTestRepository.cs" />
     <Compile Include="TestObjects\AdvertisingCampaignTestRepository.cs" />

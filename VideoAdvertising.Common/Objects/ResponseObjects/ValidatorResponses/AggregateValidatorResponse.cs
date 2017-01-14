@@ -7,7 +7,7 @@ using VideoAdvertising.Common.Interfaces.ValidatorInterfaces;
 
 namespace VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses
 {
-    class AggregateValidatorResponse : IValidatorResponse
+    public class AggregateValidatorResponse : IValidatorResponse
     {
         public bool Passed { get; private set; }
         public IEnumerable<string> Messages { get; private set; }

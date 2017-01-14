@@ -12,10 +12,21 @@ namespace VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses
         public bool Passed {
             get { return false; }
         }
-        public IEnumerable<string> Messages { get {return new List<string> { "Always fails validator message." };}}
+
+        public IEnumerable<string> Messages
+        {
+            get
+            {
+                return new List<string> { "Always fails validator message." };
+            }
+        }
+
         public bool SystemFailure
         {
-            get { return false; }
+            get
+            {
+                return false;
+            }
         }
     }
 }

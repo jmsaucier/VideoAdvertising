@@ -2,11 +2,10 @@
 using Moq;
 using NUnit.Framework;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
-using VideoAdvertising.Common.Objects.ValidatorObjects;
 using VideoAdvertising.Common.Objects.ValidatorObjects.UserValidators;
 using VideoAdvertising.Tests.TestObjects;
 
-namespace VideoAdvertising.Tests.Common.Objects.ValidatorObjects
+namespace VideoAdvertising.Tests.Common.Objects.ValidatorObjects.UserValidators
 {
     [TestFixture]
     public class UsernameDoesNotExistValidatorTest

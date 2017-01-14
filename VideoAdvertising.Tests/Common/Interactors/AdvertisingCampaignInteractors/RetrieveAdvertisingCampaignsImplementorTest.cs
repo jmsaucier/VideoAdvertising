@@ -19,9 +19,9 @@ namespace VideoAdvertising.Tests.Common.Interactors.AdvertisingCampaignInteracto
             [Test]
             public void Is_Not_Null()
             {
-                RetrieveAdvertisingCampaignsImplementor Target =
+                RetrieveAdvertisingCampaignsImplementor target =
                     new RetrieveAdvertisingCampaignsImplementor(new AdvertisingCampaignTestRepository());
-                Assert.NotNull(Target);
+                Assert.NotNull(target);
             }
         }
 
@@ -34,8 +34,8 @@ namespace VideoAdvertising.Tests.Common.Interactors.AdvertisingCampaignInteracto
                 var requestMock = new Mock<IRetrieveAdvertisingCampaignRequest>();
                 requestMock.Setup(a => a.UserId).Returns("1");
 
-                RetrieveAdvertisingCampaignsImplementor Target = new RetrieveAdvertisingCampaignsImplementor(new AdvertisingCampaignTestRepository());
-                var response = Target.GetAdvertisingCampaigns(requestMock.Object);
+                RetrieveAdvertisingCampaignsImplementor target = new RetrieveAdvertisingCampaignsImplementor(new AdvertisingCampaignTestRepository());
+                var response = target.GetAdvertisingCampaigns(requestMock.Object);
                 Assert.IsNotNull(response);
             }
 
