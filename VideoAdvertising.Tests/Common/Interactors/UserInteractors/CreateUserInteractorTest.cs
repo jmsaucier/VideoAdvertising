@@ -34,7 +34,6 @@ namespace VideoAdvertising.Tests.Common.Interactors.UserInteractors
                 _requestMock = new Mock<ICreateUserRequest>();
                 _requestMock.Setup(a => a.Email).Returns("abc@abc.com");
                 _requestMock.Setup(a => a.Username).Returns("abcabc");
-
             }
 
             [Test]
@@ -70,8 +69,18 @@ namespace VideoAdvertising.Tests.Common.Interactors.UserInteractors
                 UserTestRepository repository = new UserTestRepository();
                 CreateUserInteractor target = new CreateUserInteractor(repository, new UserEmailDoesNotExistValidator(repository), new AlwaysPassValidator<ICreateUserRequest>());
                 target.CreateUser(_requestMock.Object);
-                ICreateUserResponse response2 = target.CreateUser(_requestMock.Object);
-                Assert.IsFalse(response2.Successful);
+                ICreateUserResponse response = target.CreateUser(_requestMock.Object);
+                Assert.IsFalse(response.Successful);
+            }
+
+            [Test]
+            public void Does_Not_Insert_Duplicate_Usernames()
+            {
+                UserTestRepository repository = new UserTestRepository();
+                CreateUserInteractor target = new CreateUserInteractor(repository, new UsernameDoesNotExistValidator(repository), new AlwaysPassValidator<ICreateUserRequest>());
+                target.CreateUser(_requestMock.Object);
+                ICreateUserResponse response = target.CreateUser(_requestMock.Object);
+                Assert.IsFalse(response.Successful);
             }
         }
     }
