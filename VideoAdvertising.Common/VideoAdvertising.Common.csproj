@@ -41,18 +41,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interactors\AdvertisementInteractors\CreateAdvertisementInteractor.cs" />
+    <Compile Include="Interactors\AdvertisementInteractors\RetrieveAdvertisementInteractor.cs" />
     <Compile Include="Interactors\AdvertisingCampaignInteractors\CreateAdvertisingCampaignInteractor.cs" />
     <Compile Include="Interactors\UserInteractors\CreateUserInteractor.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IAdvertisementRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IAdvertisingCampaignRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\InteractorsInterfaces\AdvertisementInteractorsInterfaces\IRetrieveAdvertisement.cs" />
     <Compile Include="Interfaces\InteractorsInterfaces\UserInteractorsInterfaces\ICreateUser.cs" />
     <Compile Include="Interfaces\InteractorsInterfaces\UserInteractorsInterfaces\IRetrieveUser.cs" />
+    <Compile Include="Interfaces\RequestInterfaces\AdvertisementRequestInterfaces\IRetrieveAdvertisementRequest.cs" />
     <Compile Include="Interfaces\RequestInterfaces\ICreateUserRequest.cs" />
     <Compile Include="Interfaces\InteractorsInterfaces\AdvertisementInteractorsInterfaces\ICreateAdvertisement.cs" />
     <Compile Include="Interfaces\RequestInterfaces\AdvertisementRequestInterfaces\ICreateAdvertisementRequest.cs" />
     <Compile Include="Interfaces\ResponseInterfaces\AdvertisementResponseInterfaces\ICreateAdvertisementResponse.cs" />
+    <Compile Include="Interfaces\ResponseInterfaces\AdvertisementResponseInterfaces\IRetrieveAdvertisementResponse.cs" />
     <Compile Include="Interfaces\ResponseInterfaces\IInteractorResponse.cs" />
     <Compile Include="Interfaces\ResponseInterfaces\UserResponseInterfaces\ICreateUserResponse.cs" />
     <Compile Include="Interfaces\ValidatorInterfaces\IValidator.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="Objects\ModelObjects\Organization.cs" />
     <Compile Include="Objects\ModelObjects\User.cs" />
     <Compile Include="Objects\ResponseObjects\AdvertisementResponses\CreateAdvertisementResponse.cs" />
+    <Compile Include="Objects\ResponseObjects\AdvertisementResponses\RetrieveAdvertisementResponse.cs" />
     <Compile Include="Objects\ResponseObjects\CreateAdvertisingCampaignResponse.cs" />
     <Compile Include="Objects\ResponseObjects\CreateUserResponse.cs" />
     <Compile Include="Objects\ResponseObjects\ValidatorResponses\AggregateValidatorResponse.cs" />
