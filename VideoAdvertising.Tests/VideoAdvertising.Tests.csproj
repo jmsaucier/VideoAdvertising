@@ -94,6 +94,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Interactors\AdvertisementInteractors\CreateAdvertisementInteractorTest.cs" />
     <Compile Include="Common\Interactors\AdvertisingCampaignInteractors\CreateAdvertisingCampaignInteractorTest.cs" />
     <Compile Include="Common\Interactors\AdvertisingCampaignInteractors\RetrieveAdvertisingCampaignsImplementorTest.cs" />
     <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\AggregateValidatorResponseTest.cs" />

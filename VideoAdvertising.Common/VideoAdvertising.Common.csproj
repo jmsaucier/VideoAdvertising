@@ -40,11 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interactors\AdvertisementInteractors\CreateAdvertisementInteractor.cs" />
     <Compile Include="Interactors\AdvertisingCampaignInteractors\CreateAdvertisingCampaignInteractor.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IAdvertisementRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IAdvertisingCampaignRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IUserRepository.cs" />
+    <Compile Include="Interfaces\InteractorsInterfaces\AdvertisementInteractorsInterfaces\ICreateAdvertisement.cs" />
     <Compile Include="Interfaces\ResponseInterfaces\IInteractorResponse.cs" />
     <Compile Include="Interfaces\ValidatorInterfaces\IValidator.cs" />
     <Compile Include="Interfaces\ValidatorInterfaces\IValidatorResponse.cs" />
