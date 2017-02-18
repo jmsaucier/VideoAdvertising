@@ -108,6 +108,7 @@
     <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UserEmailDoesNotExistValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UserIdExistsValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UsernameDoesNotExistValidatorTest.cs" />
+    <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UserObjectsMatchValidatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestObjects\AdvertisementTestRepository.cs" />
     <Compile Include="TestObjects\AdvertisingCampaignTestRepository.cs" />
