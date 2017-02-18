@@ -4,6 +4,7 @@ using NUnit.Framework;
 using VideoAdvertising.Common.Interactors.AdvertisingCampaignInteractors;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces;
+using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequests;
 using VideoAdvertising.Common.Interfaces.ResponseInterfaces.AdvertisingCampaignResponseInterfaces;
 using VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses;
 using VideoAdvertising.Common.Objects.ValidatorObjects.GeneralValidators;
