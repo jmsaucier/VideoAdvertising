@@ -13,13 +13,21 @@ namespace VideoAdvertising.Tests.TestObjects
     {
         private int nextId = 5;
 
-        private readonly List<IAdvertisement> repository = new List<IAdvertisement>()
+        private IUserRepository userRepository;
+
+        private List<IAdvertisement> repository;
+
+        public AdvertisementTestRepository()
         {
-            new Advertisement { Id="1", Name="a", UserId = "1"},
-            new Advertisement { Id="2", Name="b", UserId = "1"},
-            new Advertisement { Id="3", Name="c", UserId = "2"},
-            new Advertisement { Id="4", Name="a", UserId = "2"}
-        };
+            userRepository = new UserTestRepository();
+            repository = new List<IAdvertisement>
+            {
+                new Advertisement {Id = "1", Name = "a", User = userRepository.GetById("1")},
+                new Advertisement {Id = "2", Name = "b", User = userRepository.GetById("1")},
+                new Advertisement {Id = "3", Name = "c", User = userRepository.GetById("2")},
+                new Advertisement {Id = "4", Name = "a", User = userRepository.GetById("2")}
+            };
+        }
 
         public IAdvertisement GetById(string id)
         {

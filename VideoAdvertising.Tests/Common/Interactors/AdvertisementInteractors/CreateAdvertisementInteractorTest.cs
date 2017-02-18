@@ -6,6 +6,10 @@ using VideoAdvertising.Common.Interfaces.InteractorsInterfaces.AdvertisementInte
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisementRequestInterfaces;
 using VideoAdvertising.Common.Interfaces.ResponseInterfaces.AdvertisementResponseInterfaces;
+using VideoAdvertising.Common.Interfaces.ValidatorInterfaces;
+using VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses;
+using VideoAdvertising.Common.Objects.ValidatorObjects.GeneralValidators;
+using VideoAdvertising.Common.Objects.ValidatorObjects.UserValidators;
 using VideoAdvertising.Tests.TestObjects;
 
 namespace VideoAdvertising.Tests.Common.Interactors.AdvertisementInteractors
@@ -19,7 +23,7 @@ namespace VideoAdvertising.Tests.Common.Interactors.AdvertisementInteractors
             [Test]
             public void Is_Not_Null()
             {
-                Assert.IsNotNull(new CreateAdvertisementInteractor(new AdvertisementTestRepository()));
+                Assert.IsNotNull(new CreateAdvertisementInteractor(new AdvertisementTestRepository(), new UserIdExistsValidator(new UserTestRepository())));
             }
         }
 
@@ -33,7 +37,7 @@ namespace VideoAdvertising.Tests.Common.Interactors.AdvertisementInteractors
             public void Before_Each_Test()
             {
                 testRepository = new AdvertisementTestRepository();
-                Target = new CreateAdvertisementInteractor(testRepository);
+                Target = new CreateAdvertisementInteractor(testRepository, new AlwaysPassValidator<IUser>());
             }
 
             [Test]
@@ -58,9 +62,56 @@ namespace VideoAdvertising.Tests.Common.Interactors.AdvertisementInteractors
             {
                 Mock<ICreateAdvertisementRequest> mockRequest = new Mock<ICreateAdvertisementRequest>();
                 mockRequest.Setup(a => a.Name).Returns("AAA");
-                mockRequest.Setup(a => a.UserId).Returns("1");
+                mockRequest.Setup(a => a.User).Returns(new UserTestRepository().GetById("1"));
                 ICreateAdvertisementResponse response = Target.CreateAdvertisement(mockRequest.Object);
                 Assert.IsTrue(testRepository.GetById(response.Advertisement.Id).Id != string.Empty);
+            }
+
+            [Test]
+            public void Calls_User_Validator()
+            {
+                Mock<ICreateAdvertisementRequest> mockRequest = new Mock<ICreateAdvertisementRequest>();
+                Mock<IUser> userMock = new Mock<IUser>();
+
+                mockRequest.Setup(a => a.User).Returns(userMock.Object);
+                TestValidatorWasCalled<IUser, AlwaysPassesValidatorResponse> userValidator = new TestValidatorWasCalled<IUser, AlwaysPassesValidatorResponse>();
+                
+                Target = new CreateAdvertisementInteractor(testRepository, userValidator);
+                Target.CreateAdvertisement(mockRequest.Object);
+                Assert.IsTrue(userValidator.WasCalled);
+            }
+
+            [Test]
+            public void Passes_If_User_With_Id_Exists_When_Given_Id_Validator()
+            {
+                Mock<ICreateAdvertisementRequest> mockRequest = new Mock<ICreateAdvertisementRequest>();
+                mockRequest.Setup(a => a.User).Returns(new UserTestRepository().GetById("1"));
+
+                Target = new CreateAdvertisementInteractor(
+                    new AdvertisementTestRepository(), 
+                    new UserIdExistsValidator(
+                        new UserTestRepository()
+                    )
+                );
+                ICreateAdvertisementResponse response = Target.CreateAdvertisement(mockRequest.Object);
+                Assert.IsTrue(response.Successful);
+            }
+
+            [Test]
+            public void Fails_If_User_Id_Does_Not_Exist_When_Given_Id_Validator()
+            {
+                Mock<ICreateAdvertisementRequest> mockRequest = new Mock<ICreateAdvertisementRequest>();
+                mockRequest.Setup(a => a.User).Returns(new UserTestRepository().GetById("11111"));
+
+                Target = new CreateAdvertisementInteractor(
+                    new AdvertisementTestRepository(),
+                    new UserIdExistsValidator(
+                        new UserTestRepository()
+                    )
+                );
+
+                ICreateAdvertisementResponse response = Target.CreateAdvertisement(mockRequest.Object);
+                Assert.IsFalse(response.Successful);
             }
         }
     }

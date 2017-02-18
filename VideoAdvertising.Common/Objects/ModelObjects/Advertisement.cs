@@ -6,6 +6,6 @@ namespace VideoAdvertising.Common.Objects.ModelObjects
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public string UserId { get; set; }
+        public IUser User { get; set; }
     }
 }

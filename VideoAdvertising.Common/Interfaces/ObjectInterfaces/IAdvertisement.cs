@@ -6,6 +6,6 @@
 
         string Name { get; set; }
         
-        string UserId { get; set; }
+        IUser User { get; set; }
     }
 }

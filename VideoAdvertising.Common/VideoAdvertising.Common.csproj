@@ -75,6 +75,7 @@
     <Compile Include="Objects\ValidatorObjects\GeneralValidators\ReturnCertainTypeOfResponseValidator.cs" />
     <Compile Include="Objects\ValidatorObjects\RequestValidators\CreateAdvertisingRequestValidator.cs" />
     <Compile Include="Objects\ValidatorObjects\UserValidators\UserEmailDoesNotExistValidator.cs" />
+    <Compile Include="Objects\ValidatorObjects\UserValidators\UserIdExistsValidator.cs" />
     <Compile Include="Objects\ValidatorObjects\UserValidators\UsernameDoesNotExistValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\RequestInterfaces\AdvertisingCampaignRequestInterfaces\IRetrieveAdvertisingCampaignRequest.cs" />
