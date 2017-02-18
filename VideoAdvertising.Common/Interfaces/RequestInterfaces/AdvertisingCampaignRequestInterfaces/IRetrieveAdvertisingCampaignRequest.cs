@@ -1,4 +1,4 @@
-﻿namespace VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequests
+﻿namespace VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequestInterfaces
 {
     public interface IRetrieveAdvertisingCampaignRequest
     {

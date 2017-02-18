@@ -1,7 +1,7 @@
 ﻿using System;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 
-namespace VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequests
+namespace VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequestInterfaces
 {
     public interface ICreateAdvertisingCampaignRequest
     {

@@ -3,21 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
 using VideoAdvertising.Common.Interfaces.InteractorsInterfaces.AdvertisementInteractorsInterfaces;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
-using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisementRequests;
+using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisementRequestInterfaces;
+using VideoAdvertising.Common.Interfaces.ResponseInterfaces.AdvertisementResponseInterfaces;
 using VideoAdvertising.Common.Objects.ModelObjects;
+using VideoAdvertising.Common.Objects.ResponseObjects.AdvertisementResponses;
 
 namespace VideoAdvertising.Common.Interactors.AdvertisementInteractors
 {
     public class CreateAdvertisementInteractor : ICreateAdvertisement
     {
-        public IAdvertisement CreateAdvertisement(ICreateAdvertisementRequest request)
+        private IAdvertisementRepository _advertisementRepository;
+
+        public CreateAdvertisementInteractor(IAdvertisementRepository repository)
         {
-            return new Advertisement
+            _advertisementRepository = repository;
+        }
+
+        public ICreateAdvertisementResponse CreateAdvertisement(ICreateAdvertisementRequest request)
+        {
+            Advertisement advertisement = new Advertisement
             {
-                Name = request.Name
+                Name = request.Name,
+                UserId = request.UserId
             };
+
+            IAdvertisement storedAdvertisement = _advertisementRepository.Store(advertisement);
+            CreateAdvertisementResponse response = new CreateAdvertisementResponse(){Advertisement = storedAdvertisement };
+            return response;
         }
     }
 }

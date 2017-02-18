@@ -1,4 +1,4 @@
-﻿namespace VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisementRequests
+﻿namespace VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisementRequestInterfaces
 {
     public interface ICreateAdvertisementRequest
     {

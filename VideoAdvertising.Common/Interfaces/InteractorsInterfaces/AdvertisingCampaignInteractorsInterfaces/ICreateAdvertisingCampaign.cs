@@ -1,5 +1,5 @@
 ﻿using VideoAdvertising.Common.Interfaces.RequestInterfaces;
-using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequests;
+using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequestInterfaces;
 using VideoAdvertising.Common.Interfaces.ResponseInterfaces.AdvertisingCampaignResponseInterfaces;
 
 namespace VideoAdvertising.Common.Interfaces.InteractorsInterfaces.AdvertisingCampaignInteractorsInterfaces

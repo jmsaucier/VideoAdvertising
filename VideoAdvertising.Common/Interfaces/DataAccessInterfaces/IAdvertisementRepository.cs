@@ -4,6 +4,6 @@ namespace VideoAdvertising.Common.Interfaces.DataAccessInterfaces
 {
     public interface IAdvertisementRepository : IRepository<IAdvertisement>
     {
-        
+
     }
 }

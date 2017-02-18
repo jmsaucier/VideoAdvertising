@@ -4,7 +4,7 @@ using System.Xml.Linq;
 using VideoAdvertising.Common.Interfaces.InteractorsInterfaces;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces;
-using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequests;
+using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequestInterfaces;
 using VideoAdvertising.Common.Interfaces.ValidatorInterfaces;
 using VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses;
 

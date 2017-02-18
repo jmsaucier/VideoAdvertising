@@ -5,7 +5,7 @@ using Moq;
 using NUnit.Framework;
 using VideoAdvertising.Common.Interactors.AdvertisingCampaignInteractors;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces;
-using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequests;
+using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequestInterfaces;
 using VideoAdvertising.Common.Objects;
 using VideoAdvertising.Tests.TestObjects;
 

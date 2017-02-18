@@ -8,7 +8,7 @@ using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces;
 using VideoAdvertising.Common.Interfaces.ResponseInterfaces;
 using VideoAdvertising.Common.Interfaces.InteractorsInterfaces.AdvertisingCampaignInteractorsInterfaces;
-using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequests;
+using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequestInterfaces;
 using VideoAdvertising.Common.Interfaces.ResponseInterfaces.AdvertisingCampaignResponseInterfaces;
 using VideoAdvertising.Common.ResponseObjects;
 
