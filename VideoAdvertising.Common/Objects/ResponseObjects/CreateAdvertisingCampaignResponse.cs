@@ -26,7 +26,7 @@ namespace VideoAdvertising.Common.Objects.ResponseObjects
         }
 
         public IAdvertisingCampaign AdvertisingCampaign { get; set; }
-        public bool Successful { get; private set; }
-        public IEnumerable<string> Messages { get; private set; }
+        public bool Successful { get; }
+        public IEnumerable<string> Messages { get; }
     }
 }

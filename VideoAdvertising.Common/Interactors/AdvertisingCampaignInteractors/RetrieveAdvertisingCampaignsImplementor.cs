@@ -14,6 +14,7 @@ using VideoAdvertising.Common.ResponseObjects;
 
 namespace VideoAdvertising.Common.Interactors.AdvertisingCampaignInteractors
 {
+    //TODO - JMS 1/18/17 Rename this to be by user, and add interface and implementor to retrieve by Id
     public class RetrieveAdvertisingCampaignsImplementor : IRetrieveAdvertisingCampaigns
     {
         private readonly IAdvertisingCampaignRepository _advertisingCampaignRepository;
