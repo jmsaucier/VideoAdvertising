@@ -8,5 +8,6 @@ namespace VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisementRequ
 {
     public interface IRetrieveAdvertisementRequest
     {
+        string Id { get; set; }
     }
 }
