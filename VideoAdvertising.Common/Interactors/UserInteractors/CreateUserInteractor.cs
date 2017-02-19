@@ -21,7 +21,8 @@ namespace VideoAdvertising.Common.Interactors.UserInteractors
         private IValidator<IUser> _userValidator;
         private IValidator<ICreateUserRequest> _requestValidator;
 
-        public CreateUserInteractor(IUserRepository repository, IValidator<IUser> userValidator, IValidator<ICreateUserRequest> requestValidator)
+        public CreateUserInteractor(IUserRepository repository, IValidator<IUser> userValidator, 
+            IValidator<ICreateUserRequest> requestValidator)
         {
             _repository = repository;
             _userValidator = userValidator;

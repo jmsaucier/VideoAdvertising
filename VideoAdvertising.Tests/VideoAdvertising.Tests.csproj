@@ -104,6 +104,7 @@
     <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\AlwaysPassesValidatorResponseTest.cs" />
     <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\GenericValidatorResponseTest.cs" />
     <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\SystemFailureValidatorResponseTest.cs" />
+    <Compile Include="Common\Objects\SecurityObjects\ProtectedDataStringEncryptorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\GeneralValidators\AlwaysPassValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\GeneralValidators\ReturnCertainTypeOfResponseValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UserEmailDoesNotExistValidatorTest.cs" />

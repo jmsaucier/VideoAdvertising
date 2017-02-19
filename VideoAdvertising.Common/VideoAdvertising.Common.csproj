@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -59,6 +60,8 @@
     <Compile Include="Interfaces\ResponseInterfaces\AdvertisementResponseInterfaces\IRetrieveAdvertisementResponse.cs" />
     <Compile Include="Interfaces\ResponseInterfaces\IInteractorResponse.cs" />
     <Compile Include="Interfaces\ResponseInterfaces\UserResponseInterfaces\ICreateUserResponse.cs" />
+    <Compile Include="Interfaces\SecurityInterfaces\IStringEncryptor.cs" />
+    <Compile Include="Interfaces\SecurityInterfaces\IStringEncryptorResponse.cs" />
     <Compile Include="Interfaces\ValidatorInterfaces\IValidator.cs" />
     <Compile Include="Interfaces\ValidatorInterfaces\IValidatorResponse.cs" />
     <Compile Include="Interfaces\InteractorsInterfaces\AdvertisingCampaignInteractorsInterfaces\ICreateAdvertisingCampaign.cs" />
@@ -82,6 +85,8 @@
     <Compile Include="Objects\ResponseObjects\ValidatorResponses\AlwaysPassesValidatorResponse.cs" />
     <Compile Include="Objects\ResponseObjects\ValidatorResponses\GenericValidatorResponse.cs" />
     <Compile Include="Objects\ResponseObjects\ValidatorResponses\SystemFailureValidatorResponse.cs" />
+    <Compile Include="Objects\SecurityObjects\ProtectedDataStringEncryptor.cs" />
+    <Compile Include="Objects\SecurityObjects\StringEncryptorResponseClass.cs" />
     <Compile Include="Objects\ValidatorObjects\GeneralValidators\AlwaysPassValidator.cs" />
     <Compile Include="Objects\ValidatorObjects\GeneralValidators\ReturnCertainTypeOfResponseValidator.cs" />
     <Compile Include="Objects\ValidatorObjects\RequestValidators\CreateAdvertisingRequestValidator.cs" />
