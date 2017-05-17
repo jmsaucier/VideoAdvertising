@@ -8,6 +8,11 @@ namespace VideoAdvertising.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeController(int temp)
+        {
+            
+        }
+
         public ActionResult Index()
         {
             return View();

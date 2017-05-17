@@ -24,7 +24,7 @@ namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
 
         public IUser Update(string id, IUser value)
         {
-            throw new NotImplementedException();
+
         }
 
         public IUser GetUserByUserName(string username)
