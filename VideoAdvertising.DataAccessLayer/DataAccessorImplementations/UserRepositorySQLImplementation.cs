@@ -1,40 +1,58 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
+using VideoAdvertising.Common.Objects.ModelObjects;
+using VideoAdvertising.DataAccessLayer.DbContexts;
 
 namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
 {
     public class UserRepositorySQLImplementation : IUserRepository
     {
+        private readonly UserDbContext _dbContext;
+
+        public UserRepositorySQLImplementation(UserDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         public IUser GetById(string id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Users.FirstOrDefault(a => a.Id == id) ?? new User();
         }
 
         public IEnumerable<IUser> GetAll()
         {
-            throw new NotImplementedException();
+            return _dbContext.Users;
         }
 
         public IUser Store(IUser value)
         {
-            throw new NotImplementedException();
+            IUser ret = _dbContext.Users.Add((User)value);
+            _dbContext.SaveChanges();
+            return ret ?? new User();
         }
 
         public IUser Update(string id, IUser value)
         {
-
+            IUser currentEntity = _dbContext.Users.Find(id);
+            if (currentEntity == null)
+            {
+                return new User();
+            }
+            _dbContext.Entry(currentEntity).CurrentValues.SetValues(value);
+            _dbContext.SaveChanges();
+            return _dbContext.Users.Find(id) ?? new User();
         }
 
         public IUser GetUserByUserName(string username)
         {
-            throw new NotImplementedException();
+            return _dbContext.Users.FirstOrDefault(a => a.Username == username) ?? new User();
         }
 
         public IUser GetUserByEmail(string email)
         {
-            throw new NotImplementedException();
+            return _dbContext.Users.FirstOrDefault(a => a.Email == email) ?? new User();
         }
     }
 }

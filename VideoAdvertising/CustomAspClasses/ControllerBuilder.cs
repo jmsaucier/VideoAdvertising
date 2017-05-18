@@ -16,13 +16,14 @@ namespace VideoAdvertising.CustomAspClasses
             switch (controllerEnum)
             {
                 case ControllerEnum.Account:
+                    ret = new AccountController();
                     break;
                 case ControllerEnum.Callback:
+                    ret = new CallbackController();
                     break;
                 case ControllerEnum.Home:
-                    ret = new HomeController(0);
+                    ret = new HomeController();
                     break;
-                case ControllerEnum.Manage:
                 default:
                     ret = new ManageController();
                     break;
