@@ -16,7 +16,7 @@ using VideoAdvertising.DataAccessLayer.DbContexts;
 namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
 {
     [TestFixture]
-    public class UserRepositorySQLImplementationTest
+    public class UserRepositoryEFImplementationTest
     {
         [TestFixture]
         public class Constructor
@@ -28,14 +28,14 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
 
-                Assert.IsNotNull(new UserRepositorySQLImplementation(mockUserDbContext.Object));
+                Assert.IsNotNull(new UserRepositoryEFImplementation(mockUserDbContext.Object));
             }
         }
 
         [TestFixture]
         public class GetAll
         {
-            private UserRepositorySQLImplementation Target;
+            private UserRepositoryEFImplementation Target;
 
             [SetUp]
             public void Before_Each_Test()
@@ -53,7 +53,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
 
-                Target = new UserRepositorySQLImplementation(mockUserDbContext.Object);
+                Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
             }
 
             [Test]
@@ -72,7 +72,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
         [TestFixture]
         public class GetById
         {
-            private UserRepositorySQLImplementation Target;
+            private UserRepositoryEFImplementation Target;
 
             [SetUp]
             public void Before_Each_Test()
@@ -93,7 +93,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
 
-                Target = new UserRepositorySQLImplementation(mockUserDbContext.Object);
+                Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
             }
 
             [Test]
@@ -114,7 +114,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
         [TestFixture]
         public class GetUserByEmail
         {
-            private UserRepositorySQLImplementation Target;
+            private UserRepositoryEFImplementation Target;
 
             [SetUp]
             public void Before_Each_Test()
@@ -135,7 +135,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
 
-                Target = new UserRepositorySQLImplementation(mockUserDbContext.Object);
+                Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
             }
 
             [Test]
@@ -156,7 +156,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
         [TestFixture]
         public class GetUserByUserName
         {
-            private UserRepositorySQLImplementation Target;
+            private UserRepositoryEFImplementation Target;
 
             [SetUp]
             public void Before_Each_Test()
@@ -177,7 +177,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
 
-                Target = new UserRepositorySQLImplementation(mockUserDbContext.Object);
+                Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
             }
 
             [Test]
@@ -206,7 +206,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
                 mockUserDbContext.Setup(a => a.SaveChanges()).Callback(() => callbackCount++);
-                UserRepositorySQLImplementation Target = new UserRepositorySQLImplementation(mockUserDbContext.Object);
+                UserRepositoryEFImplementation Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
 
                 Assert.IsNotNull(Target.Store(new User()));
                 Assert.IsTrue(callbackCount == 1);
@@ -221,7 +221,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
                 mockUserDbContext.Setup(a => a.SaveChanges()).Callback(() => callbackCount++);
-                UserRepositorySQLImplementation Target = new UserRepositorySQLImplementation(mockUserDbContext.Object);
+                UserRepositoryEFImplementation Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
 
                 Assert.IsNotNull(Target.Store(new User()));
                 Assert.IsTrue(callbackCount == 1);
@@ -231,7 +231,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
         [TestFixture]
         public class Update
         {
-            private UserRepositorySQLImplementation Target;
+            private UserRepositoryEFImplementation Target;
             private DbSet<User> _userDbSet;
             private int _callbackCount;
 
@@ -261,7 +261,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
                 mockUserDbContext.Setup(a => a.Users).Returns(_userDbSet);
                 mockUserDbContext.Setup(a => a.SaveChanges()).Callback(() => _callbackCount++);
 
-                Target = new UserRepositorySQLImplementation(mockUserDbContext.Object);
+                Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
             }
 
             [Test]

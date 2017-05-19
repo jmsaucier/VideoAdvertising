@@ -8,11 +8,11 @@ using VideoAdvertising.DataAccessLayer.DbContexts;
 
 namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
 {
-    public class UserRepositorySQLImplementation : IUserRepository
+    public class UserRepositoryEFImplementation : IUserRepository
     {
         private readonly UserDbContext _dbContext;
 
-        public UserRepositorySQLImplementation(UserDbContext dbContext)
+        public UserRepositoryEFImplementation(UserDbContext dbContext)
         {
             _dbContext = dbContext;
         }
