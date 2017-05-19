@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessorImplementations\AdvertisementRepositoryEFImplementation.cs" />
     <Compile Include="DataAccessorImplementations\UserRepositoryEFImplementation.cs" />
     <Compile Include="DbContexts\UserDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
