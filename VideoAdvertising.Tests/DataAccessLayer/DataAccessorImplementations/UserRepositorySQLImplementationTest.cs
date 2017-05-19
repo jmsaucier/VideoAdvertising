@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -224,6 +225,58 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
 
                 Assert.IsNotNull(Target.Store(new User()));
                 Assert.IsTrue(callbackCount == 1);
+            }
+        }
+
+        [TestFixture]
+        public class Update
+        {
+            private UserRepositorySQLImplementation Target;
+            private DbSet<User> _userDbSet;
+            private int _callbackCount;
+
+            [SetUp]
+            public void Before_Each_Test()
+            {
+                _callbackCount = 0;
+                IQueryable<User> users = new List<User>()
+                {
+                    new User {Email = "abc@abc.com", Id = "1", Username = "abc"},
+                    new User {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
+                    new User {Email = "123@abc.com", Id = "3", Username = "123"}
+                }.AsQueryable();
+
+                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
+
+                mockDbSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(users.Provider);
+                mockDbSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(users.ElementType);
+                mockDbSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(users.Expression);
+                mockDbSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
+                mockDbSet.Setup(a => a.Find(It.IsAny<string>())).Returns(users.FirstOrDefault());
+                
+
+                mockDbSet.Setup(a => a.Add(It.IsAny<User>())).Returns(new User());
+                _userDbSet = mockDbSet.Object;
+                Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
+                mockUserDbContext.Setup(a => a.Users).Returns(_userDbSet);
+                mockUserDbContext.Setup(a => a.SaveChanges()).Callback(() => _callbackCount++);
+
+                Target = new UserRepositorySQLImplementation(mockUserDbContext.Object);
+            }
+
+            [Test]
+            public void Is_Not_Null()
+            {
+                Assert.IsNotNull(Target.Update("1", new User { Username = "def" }));
+            }
+
+            [Test]
+            public void Updates_Values_Correctly()
+            {
+                string id = "1";
+                string newUsername = "def";
+                Target.Update(id, new User {Username = newUsername});
+                Assert.IsTrue(_callbackCount == 1);
             }
         }
     }

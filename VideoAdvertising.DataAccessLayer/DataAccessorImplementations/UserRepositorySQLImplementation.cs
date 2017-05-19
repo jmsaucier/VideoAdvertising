@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
@@ -40,7 +41,7 @@ namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
             {
                 return new User();
             }
-            _dbContext.Entry(currentEntity).CurrentValues.SetValues(value);
+            _dbContext.Entry(currentEntity).State = EntityState.Modified;
             _dbContext.SaveChanges();
             return _dbContext.Users.Find(id) ?? new User();
         }
