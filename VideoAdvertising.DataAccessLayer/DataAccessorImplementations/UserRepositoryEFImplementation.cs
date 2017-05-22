@@ -5,6 +5,7 @@ using VideoAdvertising.Common.Interfaces.DataAccessInterfaces;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 using VideoAdvertising.Common.Objects.ModelObjects;
 using VideoAdvertising.DataAccessLayer.DbContexts;
+using VideoAdvertising.DataAccessLayer.Models;
 
 namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
 {
@@ -19,7 +20,7 @@ namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
 
         public IUser GetById(string id)
         {
-            return _dbContext.Users.FirstOrDefault(a => a.Id == id) ?? new User();
+            return _dbContext.Users.FirstOrDefault(a => a.Id == id) ?? new DbUser();
         }
 
         public IEnumerable<IUser> GetAll()
@@ -29,31 +30,31 @@ namespace VideoAdvertising.DataAccessLayer.DataAccessorImplementations
 
         public IUser Store(IUser value)
         {
-            IUser ret = _dbContext.Users.Add((User)value);
+            IUser ret = _dbContext.Users.Add((DbUser)value);
             _dbContext.SaveChanges();
-            return ret ?? new User();
+            return ret ?? new DbUser();
         }
 
         public IUser Update(string id, IUser value)
         {
-            IUser currentEntity = _dbContext.Users.Find(id);
+            DbUser currentEntity = _dbContext.Users.Find(id);
             if (currentEntity == null)
             {
-                return new User();
+                return new DbUser();
             }
-            _dbContext.Entry(currentEntity).State = EntityState.Modified;
+            _dbContext.SetEntryIsModified(currentEntity);
             _dbContext.SaveChanges();
-            return _dbContext.Users.Find(id) ?? new User();
+            return _dbContext.Users.Find(id) ?? new DbUser();
         }
 
         public IUser GetUserByUserName(string username)
         {
-            return _dbContext.Users.FirstOrDefault(a => a.Username == username) ?? new User();
+            return _dbContext.Users.FirstOrDefault(a => a.Username == username) ?? new DbUser();
         }
 
         public IUser GetUserByEmail(string email)
         {
-            return _dbContext.Users.FirstOrDefault(a => a.Email == email) ?? new User();
+            return _dbContext.Users.FirstOrDefault(a => a.Email == email) ?? new DbUser();
         }
     }
 }

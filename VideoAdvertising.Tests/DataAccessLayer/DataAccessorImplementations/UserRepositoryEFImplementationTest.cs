@@ -12,6 +12,7 @@ using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
 using VideoAdvertising.Common.Objects.ModelObjects;
 using VideoAdvertising.DataAccessLayer.DataAccessorImplementations;
 using VideoAdvertising.DataAccessLayer.DbContexts;
+using VideoAdvertising.DataAccessLayer.Models;
 
 namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
 {
@@ -24,7 +25,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             [Test]
             public void Is_Not_Null()
             {
-                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
+                Mock<DbSet<DbUser>> mockDbSet = new Mock<DbSet<DbUser>>();
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
 
@@ -40,15 +41,15 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             [SetUp]
             public void Before_Each_Test()
             {
-                IQueryable<User> users = new List<User>()
+                IQueryable<DbUser> users = new List<DbUser>()
                 {
-                    new User {Email = "abc@abc.com", Id = "1", Username = "abc"},
-                    new User {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
-                    new User {Email = "123@abc.com", Id = "3", Username = "123"}
+                    new DbUser {Email = "abc@abc.com", Id = "1", Username = "abc"},
+                    new DbUser {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
+                    new DbUser {Email = "123@abc.com", Id = "3", Username = "123"}
                 }.AsQueryable();
 
-                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
-                mockDbSet.As<IQueryable<User>>().Setup(a => a.GetEnumerator()).Returns(users.GetEnumerator());
+                Mock<DbSet<DbUser>> mockDbSet = new Mock<DbSet<DbUser>>();
+                mockDbSet.As<IQueryable<DbUser>>().Setup(a => a.GetEnumerator()).Returns(users.GetEnumerator());
 
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
@@ -77,18 +78,18 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             [SetUp]
             public void Before_Each_Test()
             {
-                IQueryable<User> users = new List<User>()
+                IQueryable<DbUser> users = new List<DbUser>()
                 {
-                    new User {Email = "abc@abc.com", Id = "1", Username = "abc"},
-                    new User {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
-                    new User {Email = "123@abc.com", Id = "3", Username = "123"}
+                    new DbUser {Email = "abc@abc.com", Id = "1", Username = "abc"},
+                    new DbUser {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
+                    new DbUser {Email = "123@abc.com", Id = "3", Username = "123"}
                 }.AsQueryable();
 
-                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(users.Provider);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(users.ElementType);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(users.Expression);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
+                Mock<DbSet<DbUser>> mockDbSet = new Mock<DbSet<DbUser>>();
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.Provider).Returns(users.Provider);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.ElementType).Returns(users.ElementType);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.Expression).Returns(users.Expression);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
                 
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
@@ -119,18 +120,18 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             [SetUp]
             public void Before_Each_Test()
             {
-                IQueryable<User> users = new List<User>()
+                IQueryable<DbUser> users = new List<DbUser>()
                 {
-                    new User {Email = "abc@abc.com", Id = "1", Username = "abc"},
-                    new User {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
-                    new User {Email = "123@abc.com", Id = "3", Username = "123"}
+                    new DbUser {Email = "abc@abc.com", Id = "1", Username = "abc"},
+                    new DbUser {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
+                    new DbUser {Email = "123@abc.com", Id = "3", Username = "123"}
                 }.AsQueryable();
 
-                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(users.Provider);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(users.ElementType);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(users.Expression);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
+                Mock<DbSet<DbUser>> mockDbSet = new Mock<DbSet<DbUser>>();
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.Provider).Returns(users.Provider);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.ElementType).Returns(users.ElementType);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.Expression).Returns(users.Expression);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
 
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
@@ -161,18 +162,18 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             [SetUp]
             public void Before_Each_Test()
             {
-                IQueryable<User> users = new List<User>()
+                IQueryable<DbUser> users = new List<DbUser>()
                 {
-                    new User {Email = "abc@abc.com", Id = "1", Username = "abc"},
-                    new User {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
-                    new User {Email = "123@abc.com", Id = "3", Username = "123"}
+                    new DbUser {Email = "abc@abc.com", Id = "1", Username = "abc"},
+                    new DbUser {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
+                    new DbUser {Email = "123@abc.com", Id = "3", Username = "123"}
                 }.AsQueryable();
 
-                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(users.Provider);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(users.ElementType);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(users.Expression);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
+                Mock<DbSet<DbUser>> mockDbSet = new Mock<DbSet<DbUser>>();
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.Provider).Returns(users.Provider);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.ElementType).Returns(users.ElementType);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.Expression).Returns(users.Expression);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
 
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
@@ -201,14 +202,14 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             public void Is_Not_Null()
             {
                 int callbackCount = 0;
-                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
-                mockDbSet.Setup(a => a.Add(It.IsAny<User>())).Returns(new User());
+                Mock<DbSet<DbUser>> mockDbSet = new Mock<DbSet<DbUser>>();
+                mockDbSet.Setup(a => a.Add(It.IsAny<DbUser>())).Returns(new DbUser());
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
                 mockUserDbContext.Setup(a => a.SaveChanges()).Callback(() => callbackCount++);
                 UserRepositoryEFImplementation Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
 
-                Assert.IsNotNull(Target.Store(new User()));
+                Assert.IsNotNull(Target.Store(new DbUser()));
                 Assert.IsTrue(callbackCount == 1);
             }
 
@@ -216,14 +217,14 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             public void Null_Db_Return_Is_Not_Returned_Null()
             {
                 int callbackCount = 0;
-                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
-                mockDbSet.Setup(a => a.Add(It.IsAny<User>())).Returns((User)null);
+                Mock<DbSet<DbUser>> mockDbSet = new Mock<DbSet<DbUser>>();
+                mockDbSet.Setup(a => a.Add(It.IsAny<DbUser>())).Returns((DbUser)null);
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
                 mockUserDbContext.Setup(a => a.Users).Returns(mockDbSet.Object);
                 mockUserDbContext.Setup(a => a.SaveChanges()).Callback(() => callbackCount++);
                 UserRepositoryEFImplementation Target = new UserRepositoryEFImplementation(mockUserDbContext.Object);
 
-                Assert.IsNotNull(Target.Store(new User()));
+                Assert.IsNotNull(Target.Store(new DbUser()));
                 Assert.IsTrue(callbackCount == 1);
             }
         }
@@ -232,32 +233,34 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
         public class Update
         {
             private UserRepositoryEFImplementation Target;
-            private DbSet<User> _userDbSet;
+            private DbSet<DbUser> _userDbSet;
             private int _callbackCount;
 
             [SetUp]
             public void Before_Each_Test()
             {
                 _callbackCount = 0;
-                IQueryable<User> users = new List<User>()
+                IQueryable<DbUser> users = new List<DbUser>()
                 {
-                    new User {Email = "abc@abc.com", Id = "1", Username = "abc"},
-                    new User {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
-                    new User {Email = "123@abc.com", Id = "3", Username = "123"}
+                    new DbUser {Email = "abc@abc.com", Id = "1", Username = "abc"},
+                    new DbUser {Email = "xyz@abc.com", Id = "2", Username = "xyz"},
+                    new DbUser {Email = "123@abc.com", Id = "3", Username = "123"}
                 }.AsQueryable();
 
-                Mock<DbSet<User>> mockDbSet = new Mock<DbSet<User>>();
+                Mock<DbSet<DbUser>> mockDbSet = new Mock<DbSet<DbUser>>();
 
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(users.Provider);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(users.ElementType);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(users.Expression);
-                mockDbSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.Provider).Returns(users.Provider);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.ElementType).Returns(users.ElementType);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.Expression).Returns(users.Expression);
+                mockDbSet.As<IQueryable<DbUser>>().Setup(m => m.GetEnumerator()).Returns(users.GetEnumerator());
                 mockDbSet.Setup(a => a.Find(It.IsAny<string>())).Returns(users.FirstOrDefault());
-                
 
-                mockDbSet.Setup(a => a.Add(It.IsAny<User>())).Returns(new User());
+
+                mockDbSet.Setup(a => a.Add(It.IsAny<DbUser>())).Returns(new DbUser());
                 _userDbSet = mockDbSet.Object;
                 Mock<UserDbContext> mockUserDbContext = new Mock<UserDbContext>();
+                mockUserDbContext.Setup(a => a.SetEntryIsModified(It.IsAny<DbUser>()));
+                mockUserDbContext.Setup(a => a.SetPropertyIsModified(It.IsAny<DbUser>()));
                 mockUserDbContext.Setup(a => a.Users).Returns(_userDbSet);
                 mockUserDbContext.Setup(a => a.SaveChanges()).Callback(() => _callbackCount++);
 
@@ -267,7 +270,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             [Test]
             public void Is_Not_Null()
             {
-                Assert.IsNotNull(Target.Update("1", new User { Username = "def" }));
+                Assert.IsNotNull(Target.Update("1", new DbUser { Username = "def" }));
             }
 
             [Test]
@@ -275,7 +278,7 @@ namespace VideoAdvertising.Tests.DataAccessLayer.DataAccessorImplementations
             {
                 string id = "1";
                 string newUsername = "def";
-                Target.Update(id, new User {Username = newUsername});
+                Target.Update(id, new DbUser {Username = newUsername});
                 Assert.IsTrue(_callbackCount == 1);
             }
         }
