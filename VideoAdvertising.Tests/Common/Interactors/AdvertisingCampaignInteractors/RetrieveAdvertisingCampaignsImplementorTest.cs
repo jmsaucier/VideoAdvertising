@@ -6,6 +6,7 @@ using NUnit.Framework;
 using VideoAdvertising.Common.Interactors.AdvertisingCampaignInteractors;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces;
 using VideoAdvertising.Common.Interfaces.RequestInterfaces.AdvertisingCampaignRequestInterfaces;
+using VideoAdvertising.Common.Interfaces.ResponseInterfaces.AdvertisingCampaignResponseInterfaces;
 using VideoAdvertising.Common.Objects;
 using VideoAdvertising.Tests.TestObjects;
 
@@ -32,11 +33,11 @@ namespace VideoAdvertising.Tests.Common.Interactors.AdvertisingCampaignInteracto
             [Test]
             public void Is_Not_Null()
             {
-                var requestMock = new Mock<IRetrieveAdvertisingCampaignRequest>();
+                Mock<IRetrieveAdvertisingCampaignRequest> requestMock = new Mock<IRetrieveAdvertisingCampaignRequest>();
                 requestMock.Setup(a => a.UserId).Returns("1");
 
                 RetrieveAdvertisingCampaignsImplementor target = new RetrieveAdvertisingCampaignsImplementor(new AdvertisingCampaignTestRepository());
-                var response = target.GetAdvertisingCampaigns(requestMock.Object);
+                IRetrieveAdvertisingCampaignsResponse response = target.GetAdvertisingCampaigns(requestMock.Object);
                 Assert.IsNotNull(response);
             }
 

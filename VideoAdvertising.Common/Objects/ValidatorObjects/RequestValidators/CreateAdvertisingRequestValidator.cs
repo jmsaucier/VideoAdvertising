@@ -32,14 +32,14 @@ namespace VideoAdvertising.Common.Objects.ValidatorObjects.RequestValidators
             {
                 response.AddValidatorResponse(new GenericValidatorResponse(false, "Budget is less than zero."));
             }
-            
-            if (value.StartDate >= value.EndDate)
-            {
-                response.AddValidatorResponse(new GenericValidatorResponse(false, "Dates are invalid."));
-            }
-            else if (value.StartDate == DateTime.MinValue)
+
+            if (value.StartDate == DateTime.MinValue)
             {
                 response.AddValidatorResponse(new GenericValidatorResponse(false, "Start date is invalid."));
+            }
+            else if (value.StartDate >= value.EndDate)
+            {
+                response.AddValidatorResponse(new GenericValidatorResponse(false, "Dates are invalid."));
             }
 
             return response;

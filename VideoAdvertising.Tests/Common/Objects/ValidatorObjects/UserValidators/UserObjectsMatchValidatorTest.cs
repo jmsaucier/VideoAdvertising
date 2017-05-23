@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using VideoAdvertising.Common.Interfaces.ObjectInterfaces;
+using VideoAdvertising.Common.Objects.ResponseObjects.ValidatorResponses;
 using VideoAdvertising.Common.Objects.ValidatorObjects.UserValidators;
 using VideoAdvertising.Tests.TestObjects;
 
@@ -43,6 +44,12 @@ namespace VideoAdvertising.Tests.Common.Objects.ValidatorObjects.UserValidators
             {
                 Mock<IUser> userMock = new Mock<IUser>();
                 Assert.IsNotNull(Target.Validate(userMock.Object));   
+            }
+
+            [Test]
+            public void Null_Input_Is_System_Failure()
+            {
+                Assert.IsTrue(typeof(SystemFailureValidatorResponse) == Target.Validate(null).GetType());
             }
 
             [Test]

@@ -107,6 +107,7 @@
     <Compile Include="Common\Interactors\AdvertisingCampaignInteractors\CreateAdvertisingCampaignInteractorTest.cs" />
     <Compile Include="Common\Interactors\AdvertisingCampaignInteractors\RetrieveAdvertisingCampaignsImplementorTest.cs" />
     <Compile Include="Common\Interactors\UserInteractors\CreateUserInteractorTest.cs" />
+    <Compile Include="Common\Objects\ResponseObjects\RetrieveAdvertisingCampaignsResponseTest.cs" />
     <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\AggregateValidatorResponseTest.cs" />
     <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\AlwaysFailsValidatorResponseTest.cs" />
     <Compile Include="Common\Objects\ResponseObjects\ValidatorResponses\AlwaysPassesValidatorResponseTest.cs" />
@@ -115,6 +116,7 @@
     <Compile Include="Common\Objects\SecurityObjects\ProtectedDataStringEncryptorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\GeneralValidators\AlwaysPassValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\GeneralValidators\ReturnCertainTypeOfResponseValidatorTest.cs" />
+    <Compile Include="Common\Objects\ValidatorObjects\RequestValidators\CreateAdvertisingRequestValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UserEmailDoesNotExistValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UserIdExistsValidatorTest.cs" />
     <Compile Include="Common\Objects\ValidatorObjects\UserValidators\UsernameDoesNotExistValidatorTest.cs" />
