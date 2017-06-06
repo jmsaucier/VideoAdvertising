@@ -257,24 +257,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Callback\Index.cshtml" />
@@ -294,6 +285,10 @@
     <ProjectReference Include="..\VideoAdvertising.Common\VideoAdvertising.Common.csproj">
       <Project>{d8207136-670f-4bbe-9394-a6d98d9c7251}</Project>
       <Name>VideoAdvertising.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoAdvertising.DataAccessLayer\VideoAdvertising.DataAccessLayer.csproj">
+      <Project>{16DEA1AF-A238-43C7-AB36-023539858F36}</Project>
+      <Name>VideoAdvertising.DataAccessLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
