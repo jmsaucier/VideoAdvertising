@@ -8,7 +8,7 @@ namespace VideoAdvertising.Common.Interfaces.SecurityInterfaces
 {
     public interface IStringEncryptorResponse
     {
-        byte[] CipherBytes { get; set; }
-        byte[] Entropy { get; set; }
+        byte[] CipherBytes { get; }
+        byte[] Entropy { get; }
     }
 }

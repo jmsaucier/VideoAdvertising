@@ -16,7 +16,7 @@ namespace VideoAdvertising.Common.Objects.SecurityObjects
                 rng.GetBytes(entropy);
             }
             byte[] ret = ProtectedData.Protect(dataBytes, entropy, DataProtectionScope.CurrentUser);
-            return new StringEncryptorResponseClass { CipherBytes = ret, Entropy = entropy };
+            return new StringEncryptorResponseClass(ret, entropy);
         }
     }
 }

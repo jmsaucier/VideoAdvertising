@@ -45,6 +45,7 @@
     <Compile Include="Interactors\AdvertisementInteractors\RetrieveAdvertisementInteractor.cs" />
     <Compile Include="Interactors\AdvertisingCampaignInteractors\CreateAdvertisingCampaignInteractor.cs" />
     <Compile Include="Interactors\UserInteractors\CreateUserInteractor.cs" />
+    <Compile Include="Interactors\UserInteractors\UserCookieDecryptor.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IAdvertisementRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IAdvertisingCampaignRepository.cs" />
     <Compile Include="Interfaces\DataAccessInterfaces\IRepository.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Objects\ResponseObjects\ValidatorResponses\AlwaysPassesValidatorResponse.cs" />
     <Compile Include="Objects\ResponseObjects\ValidatorResponses\GenericValidatorResponse.cs" />
     <Compile Include="Objects\ResponseObjects\ValidatorResponses\SystemFailureValidatorResponse.cs" />
+    <Compile Include="Objects\SecurityObjects\LoginMemorizationModel.cs" />
     <Compile Include="Objects\SecurityObjects\ProtectedDataStringEncryptor.cs" />
     <Compile Include="Objects\SecurityObjects\StringEncryptorResponseClass.cs" />
     <Compile Include="Objects\ValidatorObjects\GeneralValidators\AlwaysPassValidator.cs" />
