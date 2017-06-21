@@ -130,6 +130,7 @@
     <Compile Include="TestObjects\TestValidatorWasCalled.cs" />
     <Compile Include="TestObjects\UserTestRepository.cs" />
     <Compile Include="Web\Controllers\HomeControllerTest.cs" />
+    <Compile Include="Web\CustomAspClasses\ControllerFactoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

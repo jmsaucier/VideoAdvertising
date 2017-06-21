@@ -3,13 +3,11 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.SessionState;
 using VideoAdvertising.Controllers;
-using VideoAdvertising.DataAccessLayer.DataAccessorImplementations;
-using VideoAdvertising.DataAccessLayer.DbContexts;
 using VideoAdvertising.Enums;
 
 namespace VideoAdvertising.CustomAspClasses
 {
-    public class ControllerBuilder : IControllerFactory
+    public class ControllerFactory : IControllerFactory
     {
         public IController CreateController(RequestContext requestContext, string controllerName)
         {
@@ -18,7 +16,7 @@ namespace VideoAdvertising.CustomAspClasses
             switch (controllerEnum)
             {
                 case ControllerEnum.Account:
-                    ret = new AccountController(new UserRepositoryEFImplementation(new UserDbContext()), "elysay.com");
+                    ret = new AccountController();
                     break;
                 case ControllerEnum.Callback:
                     ret = new CallbackController();
@@ -26,9 +24,11 @@ namespace VideoAdvertising.CustomAspClasses
                 case ControllerEnum.Home:
                     ret = new HomeController();
                     break;
-                default:
+                case ControllerEnum.Manage:
                     ret = new ManageController();
                     break;
+                default:
+                    throw new ArgumentException();
             }
             return ret;
         }

@@ -204,7 +204,7 @@
     <Compile Include="Controllers\CallbackController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="CustomAspClasses\ControllerBuilder.cs" />
+    <Compile Include="CustomAspClasses\ControllerFactory.cs" />
     <Compile Include="Enums\ControllerEnum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
